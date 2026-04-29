@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
@@ -62,15 +63,54 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:2rem 0
 .footer-links{display:flex;gap:1.5rem}
 .footer-links a{font-size:0.78rem;color:rgba(232,228,217,0.4);transition:color 0.2s}
 .footer-links a:hover{color:#c9a96e}
-@media(max-width:640px){
-.hero{grid-template-columns:1fr}
-.hero-photo{order:-1;max-width:280px}
-.current-role{grid-template-columns:1fr}
+@media(max-width:768px){
+/* nav: hide text links, show only book-a-call */
+.nav-links a:not(:last-child){display:none}
+.nav-links{gap:0}
+.nav-links a:last-child{font-size:0.75rem;border:1px solid rgba(201,169,110,0.5);color:#c9a96e;padding:0.4rem 0.9rem}
+nav{padding:1.25rem 0}
+/* hero: stack, photo full-width above text */
+.hero{grid-template-columns:1fr;gap:0;padding:2.5rem 0 2rem}
+.hero-photo{order:-1;margin-bottom:2rem}
+.hero-photo img{aspect-ratio:3/2;object-position:center 20%}
+.hero-photo::after{height:30%}
+.hero-kicker{font-size:0.72rem;margin-bottom:1rem}
+.hero-headline{font-size:clamp(1.8rem,7vw,2.6rem);margin-bottom:1.25rem}
+.hero-body{font-size:0.95rem;margin-bottom:1.5rem}
+.hero-ctas{flex-direction:column;gap:0.75rem}
+.btn-primary,.btn-secondary{text-align:center;padding:1rem 1.5rem;font-size:0.85rem}
+/* sections */
+.divider{margin:2.5rem 0}
+.section-label{margin-bottom:1.5rem}
+/* current role */
+.current-role{grid-template-columns:1fr;gap:2rem}
+.role-title{font-size:1.45rem}
+.conf-photo{margin-top:0}
+/* expertise: 1 col on phone */
 .expertise{grid-template-columns:1fr}
+.expertise-cell{padding:1.25rem 1rem}
+/* work grid: 1 col */
 .work-grid{grid-template-columns:1fr}
-.books{grid-template-columns:1fr}
-.contact-band{flex-direction:column;text-align:center}
-.footer{flex-direction:column;gap:1rem;text-align:center}
+.work-item{padding:1.25rem}
+/* awards: wrap tighter */
+.awards-row{gap:1rem;padding:1.25rem 0}
+/* books: stack */
+.books{grid-template-columns:1fr;gap:2rem}
+.book-cover{width:64px}
+/* contact band */
+.contact-band{flex-direction:column;text-align:center;padding:2rem 1.5rem;gap:1.5rem}
+.contact-headline{font-size:1.3rem}
+.contact-band .btn-primary{width:100%;text-align:center}
+/* footer */
+.footer{flex-direction:column;gap:1rem;text-align:center;padding:1.5rem 0}
+/* site padding */
+.site{padding:0 1.25rem}
+}
+@media(max-width:400px){
+.hero-headline{font-size:1.7rem}
+.stat-number{font-size:1.9rem}
+.expertise{grid-template-columns:1fr}
+.nav-name{font-size:0.95rem}
 }
 </style>
 
